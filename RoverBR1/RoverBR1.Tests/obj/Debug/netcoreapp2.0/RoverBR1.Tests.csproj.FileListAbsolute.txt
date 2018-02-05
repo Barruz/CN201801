@@ -1,0 +1,11 @@
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\bin\Debug\netcoreapp2.0\RoverBR1.Tests.deps.json
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\bin\Debug\netcoreapp2.0\RoverBR1.Tests.runtimeconfig.json
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\bin\Debug\netcoreapp2.0\RoverBR1.Tests.runtimeconfig.dev.json
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\bin\Debug\netcoreapp2.0\RoverBR1.Tests.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\obj\Debug\netcoreapp2.0\RoverBR1.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\obj\Debug\netcoreapp2.0\RoverBR1.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\obj\Debug\netcoreapp2.0\RoverBR1.Tests.AssemblyInfoInputs.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.Tests\obj\Debug\netcoreapp2.0\RoverBR1.Tests.AssemblyInfo.cs

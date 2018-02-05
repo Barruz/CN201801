@@ -1,0 +1,9 @@
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\bin\Debug\netcoreapp2.0\RoverBR1.deps.json
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\bin\Debug\netcoreapp2.0\RoverBR1.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\bin\Debug\netcoreapp2.0\RoverBR1.pdb
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.csprojResolveAssemblyReference.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.csproj.CoreCompileInputs.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.AssemblyInfoInputs.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.AssemblyInfo.cs
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.pdb

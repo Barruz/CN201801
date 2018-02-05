@@ -1,0 +1,13 @@
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.deps.json
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.runtimeconfig.json
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.runtimeconfig.dev.json
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.pdb
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.AssemblyInfo.cs
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.pdb
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.dll
+C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.pdb

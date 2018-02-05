@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "RoverBR1.ConsoleApp/1.0.0": {
+        "dependencies": {
+          "RoverBR1": "1.0.0"
+        },
+        "runtime": {
+          "RoverBR1.ConsoleApp.dll": {}
+        }
+      },
+      "RoverBR1/1.0.0": {
+        "runtime": {
+          "RoverBR1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RoverBR1.ConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RoverBR1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
