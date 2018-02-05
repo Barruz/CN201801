@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "f6be294f65db33237981e66fc8fce533c0d6d6db"
+    "signature": "ddd840ca6db50230448c9f3e145a29d86efac819"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,7 +9,10 @@
       "RoverBR1.Tests/1.0.0": {
         "dependencies": {
           "FluentAssertions": "4.19.4",
+          "GeorgeCloney": "1.1.2.20",
           "Microsoft.NET.Test.Sdk": "15.5.0",
+          "RoverBR1": "1.0.0",
+          "RoverBR1.ConsoleApp": "1.0.0",
           "xunit": "2.3.1",
           "xunit.runner.visualstudio": "2.3.1"
         },
@@ -24,6 +27,11 @@
         "runtime": {
           "lib/netstandard1.3/FluentAssertions.Core.dll": {},
           "lib/netstandard1.3/FluentAssertions.dll": {}
+        }
+      },
+      "GeorgeCloney/1.1.2.20": {
+        "runtime": {
+          "lib/net40/GeorgeCloney.dll": {}
         }
       },
       "Microsoft.CodeCoverage/1.0.3": {
@@ -1041,6 +1049,19 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.5.0"
         }
+      },
+      "RoverBR1/1.0.0": {
+        "runtime": {
+          "RoverBR1.dll": {}
+        }
+      },
+      "RoverBR1.ConsoleApp/1.0.0": {
+        "dependencies": {
+          "RoverBR1": "1.0.0"
+        },
+        "runtime": {
+          "RoverBR1.ConsoleApp.dll": {}
+        }
       }
     }
   },
@@ -1056,6 +1077,13 @@
       "sha512": "sha512-i2o9/YjrJUI0sx1373gj83fsITo7W/aNJ+uciV5Cg7ZUbKhGWbMekx8gTU9AuDtB54mEhMUC9uF16MOzZEp0FQ==",
       "path": "fluentassertions/4.19.4",
       "hashPath": "fluentassertions.4.19.4.nupkg.sha512"
+    },
+    "GeorgeCloney/1.1.2.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j67dVEPpcNSxLImpOSGqlg+d89HjIA/mhH/mtDhv3fLeMLeE7GyBkzeyaPj1Sdplxw4X/JvHjO6nQwSm2OznlA==",
+      "path": "georgecloney/1.1.2.20",
+      "hashPath": "georgecloney.1.1.2.20.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/1.0.3": {
       "type": "package",
@@ -1595,6 +1623,16 @@
       "sha512": "sha512-B+RtW4dyBquEyjSAFyV5RMifaOZOirDwlzcIq2DNVGo1gzJS8PAPu5S+2y1n6ZgEMWbpqJf9TkZ55+X6FLdy3A==",
       "path": "xunit.runner.visualstudio/2.3.1",
       "hashPath": "xunit.runner.visualstudio.2.3.1.nupkg.sha512"
+    },
+    "RoverBR1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RoverBR1.ConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
