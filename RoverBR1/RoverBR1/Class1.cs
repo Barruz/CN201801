@@ -13,169 +13,128 @@ namespace RoverBR1
 
     public class Coordinates
     {
+        //Starting coordinates input by user
         public int StartX { get; set; }
         public int StartY { get; set; }
-        public Direction Direction { get; set; }
+        public string StartD { get; set; }
+
+        //End coordinates input by user
         public int EndX { get; set; }
         public int EndY { get; set; }
+        public string EndD { get; set; }
+
+        //Variables allowing for the use of one method for both starting and end coordinates
+        public int EnteredX { get; set; }
+        public int EnteredY { get; set; }
+        public string EnteredD { get; set; }
+
+        //Number of steps between starting and end coordinates
         public int DifferenceX { get; set; }
         public int DifferenceY { get; set; }
-        public string StartD { get; set; }
-        public string EndD { get; set; }
+
+        //Start, end and turning directions
         public string DirectionX { get; set; }
         public string DirectionY { get; set; }
+        public Direction Direction { get; set; }
     } 
 
     public class Rover
     {
         public Coordinates Coordinates { get; set; } = new Coordinates();
-        public void Convert_StartX_To_Integer()
+
+        // Get start and end XYD coordinates input by user. Runs twice, once for starting coordinates, once for end coordinates
+        public void Get_Coordinates()
         {
-            var StartX_string = Console.ReadLine();
+            string[] Get_Coordinates = Console.ReadLine().Split(',');
+            
+            // Get X Coordinate
+            string Entered_Coordinates = Get_Coordinates[0];
                 while (true)
                 {
                     try
                     {
-                        Coordinates.StartX = Int32.Parse(StartX_string);
+                        Coordinates.EnteredX = Int32.Parse(Entered_Coordinates);
                         break;
                     }
                     catch
                     {
-                        Console.WriteLine(value: "Doesn't look like an integer to me! Please try again.");
+                        Console.WriteLine(value: "X coordinate was not an integer. Please enter the X coordinate again.");
                         Console.Write(value: "> ");
-                        StartX_string = Console.ReadLine();
+                        Entered_Coordinates = Console.ReadLine();
                     }
                 }
+
+            // Get Y Coordinate
+            Entered_Coordinates = Get_Coordinates[1];
+                while (true)
+                {
+                    try
+                    {
+                        Coordinates.EnteredY = Int32.Parse(Entered_Coordinates);
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine(value: "Y coordinate was not an integer. Please enter the Y coordinate again.");
+                        Console.Write(value: "> ");
+                        Entered_Coordinates = Console.ReadLine();
+                    }
+                }
+
+            // Get direction
+            Coordinates.EnteredD = Get_Coordinates[2];
+                while (true)
+                {
+                    if (Coordinates.EnteredD == "N" || Coordinates.EnteredD == "n")
+                    {
+                        Coordinates.EnteredD = ((Direction)0).ToString();
+                        break;
+                    }
+                    else if (Coordinates.EnteredD == "E" || Coordinates.EnteredD == "e")
+                    {
+                        Coordinates.EnteredD = ((Direction)1).ToString();
+                        break;
+                    }
+                    else if (Coordinates.EnteredD == "S" || Coordinates.EnteredD == "s")
+                    {
+                        Coordinates.EnteredD = ((Direction)2).ToString();
+                        break;
+                    }
+                    else if (Coordinates.EnteredD == "W" || Coordinates.EnteredD == "w")
+                    {
+                        Coordinates.EnteredD = ((Direction)3).ToString();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine(value: "Please choose one of the following directions: N, S, E, W.");
+                        Console.Write("> ");
+                        Coordinates.EnteredD = Console.ReadLine();
+                    }
+                    
+                }
+        }
+        
+        // Store starting coordinates in 'Start' variables
+        public void Store_Start_Variables()
+        {
+            Coordinates.StartX = Coordinates.EnteredX;
+            Coordinates.StartY = Coordinates.EnteredY;
+            Coordinates.StartD = Coordinates.EnteredD;
         }
 
-        public void Convert_StartY_To_Integer()
+        // Store end coordinates in 'End' variables
+        public void Store_End_Variables()
         {
-            var StartY_string = Console.ReadLine();
-            while (true)
-            {
-                try
-                {
-                    Coordinates.StartY = Int32.Parse(StartY_string);
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine(value: "Doesn't look like an integer to me! Please try again.");
-                    Console.Write(value: "> ");
-                    StartY_string = Console.ReadLine();
-                }
-            }
+            Coordinates.EndX = Coordinates.EnteredX;
+            Coordinates.EndY = Coordinates.EnteredY;
+            Coordinates.EndD = Coordinates.EnteredD;
         }
 
-        public void Convert_EndX_To_Integer()
+        // Face the correct direction on the X (W-E) axis & move
+        public void Move_WE()
         {
-            var EndX_string = Console.ReadLine();
-            while (true)
-            {
-                try
-                {
-                    Coordinates.EndX = Int32.Parse(EndX_string);
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine(value: "Doesn't look like an integer to me! Please try again.");
-                    Console.Write(value: "> ");
-                    EndX_string = Console.ReadLine();
-                }
-            }
-        }
-
-        public void Convert_EndY_To_Integer()
-        {
-            var EndY_string = Console.ReadLine();
-            while (true)
-            {
-                try
-                {
-                    Coordinates.EndY = Int32.Parse(EndY_string);
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine(value: "Doesn't look like an integer to me! Please try again.");
-                    Console.Write(value: "> ");
-                    EndY_string = Console.ReadLine();
-                }
-            }
-        }
-
-        public void Determine_Starting_Direction()
-        {
-            while (true)
-            {
-                Coordinates.StartD = Console.ReadLine();
-                if (Coordinates.StartD == "N")
-                {
-                    Coordinates.StartD = ((Direction)0).ToString();
-                    break;
-                }
-                else if (Coordinates.StartD == "E")
-                {
-                    Coordinates.StartD = ((Direction)1).ToString();
-                    break;
-                }
-                else if (Coordinates.StartD == "S")
-                {
-                    Coordinates.StartD = ((Direction)2).ToString();
-                    break;
-                }
-                else if (Coordinates.StartD == "W")
-                {
-                    Coordinates.StartD = ((Direction)3).ToString();
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine(value: "Please choose one of the following directions: N, S, E, W.");
-                    Console.Write("> ");
-                }
-
-            }
-        }
-
-
-        public void Determine_End_Direction()
-        {
-            while (true)
-            {
-                Coordinates.EndD = Console.ReadLine();
-                if (Coordinates.EndD == "N")
-                {
-                    Coordinates.EndD = ((Direction)0).ToString();
-                    break;
-                }
-                else if (Coordinates.EndD == "E")
-                {
-                    Coordinates.EndD = ((Direction)1).ToString();
-                    break;
-                }
-                else if (Coordinates.EndD == "S")
-                {
-                    Coordinates.EndD = ((Direction)2).ToString();
-                    break;
-                }
-                else if (Coordinates.EndD == "W")
-                {
-                    Coordinates.EndD = ((Direction)3).ToString();
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine(value: "Please choose one of the following directions: N, S, E, W.");
-                    Console.Write("> ");
-                }
-
-            }
-        }
-
-        public void Face_Correct_Direction_WE()
-        {
+            //face correct direction
             if (Coordinates.StartX > Coordinates.EndX)
             {
                 Coordinates.DirectionX = "West";
@@ -190,31 +149,30 @@ namespace RoverBR1
             {
                 Coordinates.DirectionX = Coordinates.StartD;
             }
-        }
-
-
-        public void Move_On_Axis_WE()
-        {
+            
+            //move
             if (Coordinates.StartX > Coordinates.EndX)
-                {
-                    Coordinates.DifferenceX = Coordinates.StartX - Coordinates.EndX;
+            {
+                Coordinates.DifferenceX = Coordinates.StartX - Coordinates.EndX;
             }
 
             else if (Coordinates.StartX < Coordinates.EndX)
-                {
-                    Coordinates.DifferenceX = Coordinates.EndX - Coordinates.StartX;
+            {
+                Coordinates.DifferenceX = Coordinates.EndX - Coordinates.StartX;
             }
 
             else
-                {
-                    Coordinates.DifferenceX = 0;
-                }
+            {
+                Coordinates.DifferenceX = 0;
+            }
 
             Coordinates.DifferenceX = Math.Abs(Coordinates.DifferenceX);
         }
 
-        public void Face_Correct_Direction_NS()
+        // Face the correct direction on the Y (N-S) axis & move
+        public void Move_NS()
         {
+            // Face correct direction
             if (Coordinates.StartY > Coordinates.EndY)
             {
                 Coordinates.DirectionY = "South";
@@ -229,11 +187,8 @@ namespace RoverBR1
             {
                 Coordinates.DirectionY = Coordinates.DirectionX;
             }
-        }
 
-
-        public void Move_On_Axis_NS()
-        {
+            // Move
             if (Coordinates.StartY > Coordinates.EndY)
             {
                 Coordinates.DifferenceY = Coordinates.StartY - Coordinates.EndY;
@@ -252,9 +207,32 @@ namespace RoverBR1
             Coordinates.DifferenceY = Math.Abs(Coordinates.DifferenceY);
         }
 
-
+        //Print directions
+        public void Print_Directions()
+        {
+            Console.WriteLine(value: $"(Your starting coordinates are {Coordinates.StartX}, {Coordinates.StartY}. You are facing {Coordinates.StartD}.");
+            if ((Coordinates.DirectionX == "West" || Coordinates.DirectionX == "East") && (Coordinates.DirectionX != Coordinates.StartD))
+            {
+                Console.WriteLine(value: $"(Turn {Coordinates.DirectionX}.");
+            }
+            if (Coordinates.DifferenceX > 0)
+            {
+                Console.WriteLine(value: $"(Move {Coordinates.DifferenceX} steps forward.");
+            }
+            if ((Coordinates.DirectionY == "South" || Coordinates.DirectionY == "North") & (Coordinates.DirectionY != Coordinates.DirectionX))
+            {
+                Console.WriteLine(value: $"(Turn {Coordinates.DirectionY}.");
+            }
+            if (Coordinates.DifferenceY > 0)
+            {
+                Console.WriteLine(value: $"(Move {Coordinates.DifferenceY} steps forward.");
+            }
+            if (Coordinates.DirectionY != Coordinates.EndD)
+            {
+                Console.WriteLine(value: $"(Turn {Coordinates.EndD}.");
+            }
+            Console.WriteLine(value: $"(Your have arrived at coordinates {Coordinates.EndX}, {Coordinates.EndY}. You are facing {Coordinates.EndD}.");
+            Console.WriteLine(value: "> ");
+        }
     }
-
-
-
 }

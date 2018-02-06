@@ -6,13 +6,12 @@ using GeorgeCloney;
 namespace RoverBR1.Tests
 {
 
-    /*
+
     [Fact]
-    public void GivenEmptyInstructionWeStayInPlace()
+    public void StringInCorrectFormat()
     {
         // -- arrange
         var rover = new Rover();
-        var StartCoordinates = rover.Coordinates.DeepClone();
 
         // -- act
         rover.MoveOnNSAxis("");
@@ -21,5 +20,5 @@ namespace RoverBR1.Tests
         var EndCoordinates = rover.Coordinates;
         EndCoordinates.ShouldBeEquivalentTo(StartCoordinates, "because we did not move");
     }
-    */
+
 }
