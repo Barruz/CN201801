@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace RoverBR1
 {
@@ -23,20 +24,19 @@ namespace RoverBR1
         public int EndY { get; set; }
         public string EndD { get; set; }
 
-        //Variables allowing for the use of one method for both starting and end coordinates
+        //Variables allowing for the use of one method for both starting & end coordinates
         public int EnteredX { get; set; }
         public int EnteredY { get; set; }
         public string EnteredD { get; set; }
 
-        //Number of steps between starting and end coordinates
+        //Number of steps between starting and end coordinates on X axis and Y axis
         public int DifferenceX { get; set; }
         public int DifferenceY { get; set; }
 
-        //Start, end and turning directions
+        //Start and end direction & directions in which the rover turns mid-move
         public string DirectionX { get; set; }
         public string DirectionY { get; set; }
-        public Direction Direction { get; set; }
-    } 
+    }
 
     public class Rover
     {
@@ -45,9 +45,20 @@ namespace RoverBR1
         // Get start and end XYD coordinates input by user. Runs twice, once for starting coordinates, once for end coordinates
         public void Get_Coordinates()
         {
+            //Get coordinates and check if they are in the correct format
             string[] Get_Coordinates = Console.ReadLine().Split(',');
-            
-            // Get X Coordinate
+            while (true)
+            {
+                if (Get_Coordinates.Count() != 3)
+                {
+                    Console.WriteLine(value: "Incorrect format, please try again.");
+                    Get_Coordinates = Console.ReadLine().Split(',');
+                }
+                else
+                    break;
+            }
+
+            // Get start/end X coordinate
             string Entered_Coordinates = Get_Coordinates[0];
                 while (true)
                 {
@@ -64,7 +75,7 @@ namespace RoverBR1
                     }
                 }
 
-            // Get Y Coordinate
+            // Get start/end Y coordinate
             Entered_Coordinates = Get_Coordinates[1];
                 while (true)
                 {
@@ -81,7 +92,7 @@ namespace RoverBR1
                     }
                 }
 
-            // Get direction
+            // Get start/end direction
             Coordinates.EnteredD = Get_Coordinates[2];
                 while (true)
                 {
