@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace RoverBR2
 {
@@ -39,7 +40,9 @@ namespace RoverBR2
         public GivenCoordinates GivenCoordinates { get; set; } = new GivenCoordinates();
         public StartCoordinates StartCoordinates { get; set; } = new StartCoordinates();
         public EndCoordinates EndCoordinates { get; set; } = new EndCoordinates();
-        public string instructions { get; set; }
+        public string Instructions { get; set; }
+        public string FormattingInstructions { get; set; }
+        public string Input { get; set; }
 
         public void GetStartingCoordinates()
         {
@@ -54,13 +57,29 @@ namespace RoverBR2
             EndCoordinates.Y = GivenCoordinates.Y;
             EndCoordinates.D = GivenCoordinates.D;
         }
-        
+
+        public void GetCoordinates()
+        {
+            string[] Input2 = Input.Split(',');
+            while (true)
+            {
+                if (Input2.Count() != 3)
+                {
+                    FormattingInstructions = "Please try again.";
+                    Console.WriteLine(FormattingInstructions);
+                    Console.ReadLine();
+                }
+                else
+                    break;
+            }
+        }
+
         public void GetInstructions()
         {
             
             if ((StartCoordinates.X == EndCoordinates.X) && (StartCoordinates.Y == EndCoordinates.Y) && (StartCoordinates.D == EndCoordinates.D))
             {
-                instructions = "";
+                Instructions = "";
             }
 
             else
@@ -74,13 +93,13 @@ namespace RoverBR2
 
                         if (StartCoordinates.D == Direction.W)
                         {
-                            instructions = $"Move {DifferenceX} steps forward.";
+                            Instructions = $"Move {DifferenceX} steps forward.";
                         }
 
                         else
                         {
-                            instructions = "Turn West.";
-                            instructions += $"Move {DifferenceX} steps forward.";
+                            Instructions = "Turn West.";
+                            Instructions += $"Move {DifferenceX} steps forward.";
                             StartCoordinates.D = Direction.W;
                         }
                     }
@@ -92,12 +111,12 @@ namespace RoverBR2
 
                         if (StartCoordinates.D == Direction.E)
                         {
-                            instructions = $"Move {DifferenceX} steps forward.";
+                            Instructions = $"Move {DifferenceX} steps forward.";
                         }
                         else
                         {
-                            instructions = "Turn East.";
-                            instructions += $"Move {DifferenceX} steps forward.";
+                            Instructions = "Turn East.";
+                            Instructions += $"Move {DifferenceX} steps forward.";
                             StartCoordinates.D = Direction.E;
                         }
                     }
@@ -112,13 +131,13 @@ namespace RoverBR2
 
                         if (StartCoordinates.D == Direction.S)
                         {
-                            instructions += $"Move {DifferenceY} steps forward.";
+                            Instructions += $"Move {DifferenceY} steps forward.";
                         }
 
                         else
                         {
-                            instructions += "Turn South.";
-                            instructions += $"Move {DifferenceY} steps forward.";
+                            Instructions += "Turn South.";
+                            Instructions += $"Move {DifferenceY} steps forward.";
                             StartCoordinates.D = Direction.S;
                         }
                     }
@@ -130,12 +149,12 @@ namespace RoverBR2
 
                         if (StartCoordinates.D == Direction.N)
                         {
-                            instructions += $"Move {DifferenceY} steps forward.";
+                            Instructions += $"Move {DifferenceY} steps forward.";
                         }
                         else
                         {
-                            instructions += "Turn North.";
-                            instructions += $"Move {DifferenceY} steps forward.";
+                            Instructions += "Turn North.";
+                            Instructions += $"Move {DifferenceY} steps forward.";
                             StartCoordinates.D = Direction.N;
                         }
                     }
@@ -146,16 +165,16 @@ namespace RoverBR2
                     switch (EndCoordinates.D)
                     {
                         case Direction.N:
-                            instructions += "Turn North.";
+                            Instructions += "Turn North.";
                             break;
                         case Direction.E:
-                            instructions += "Turn East.";
+                            Instructions += "Turn East.";
                             break;
                         case Direction.S:
-                            instructions += "Turn South.";
+                            Instructions += "Turn South.";
                             break;
                         case Direction.W:
-                            instructions += "Turn West.";
+                            Instructions += "Turn West.";
                             break;
                     }
                 }

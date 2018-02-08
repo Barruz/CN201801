@@ -8,8 +8,10 @@ namespace RoverBR2.ConsoleApp1
         {
             while (true)
             {
-                Console.WriteLine("Give me some instructions master!:");
+                string hello = "hellohhh";
+                Console.WriteLine(hello);
                 Console.Write("> ");
+                Console.ReadLine();
             }
         }
     }
