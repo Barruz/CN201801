@@ -55,17 +55,113 @@ namespace RoverBR2
             EndCoordinates.D = GivenCoordinates.D;
         }
         
-        public void StartCoordinatesEqualEndCoordinates()
+        public void GetInstructions()
         {
-
+            
             if ((StartCoordinates.X == EndCoordinates.X) && (StartCoordinates.Y == EndCoordinates.Y) && (StartCoordinates.D == EndCoordinates.D))
             {
                 instructions = "";
             }
+
             else
             {
-                instructions = "instructions";
+                if (StartCoordinates.X != EndCoordinates.X)
+                {
+                    if (StartCoordinates.X > EndCoordinates.X)
+                    {
+                        int DifferenceX = StartCoordinates.X - EndCoordinates.X;
+                        DifferenceX = Math.Abs(DifferenceX);
+
+                        if (StartCoordinates.D == Direction.W)
+                        {
+                            instructions = $"Move {DifferenceX} steps forward.";
+                        }
+
+                        else
+                        {
+                            instructions = "Turn West.";
+                            instructions += $"Move {DifferenceX} steps forward.";
+                            StartCoordinates.D = Direction.W;
+                        }
+                    }
+
+                    else
+                    {
+                        int DifferenceX = EndCoordinates.X - StartCoordinates.X;
+                        DifferenceX = Math.Abs(DifferenceX);
+
+                        if (StartCoordinates.D == Direction.E)
+                        {
+                            instructions = $"Move {DifferenceX} steps forward.";
+                        }
+                        else
+                        {
+                            instructions = "Turn East.";
+                            instructions += $"Move {DifferenceX} steps forward.";
+                            StartCoordinates.D = Direction.E;
+                        }
+                    }
+                }
+
+                if (StartCoordinates.Y != EndCoordinates.Y)
+                {
+                    if (StartCoordinates.Y > EndCoordinates.Y)
+                    {
+                        int DifferenceY = StartCoordinates.Y - EndCoordinates.Y;
+                        DifferenceY = Math.Abs(DifferenceY);
+
+                        if (StartCoordinates.D == Direction.S)
+                        {
+                            instructions += $"Move {DifferenceY} steps forward.";
+                        }
+
+                        else
+                        {
+                            instructions += "Turn South.";
+                            instructions += $"Move {DifferenceY} steps forward.";
+                            StartCoordinates.D = Direction.S;
+                        }
+                    }
+
+                    else
+                    {
+                        int DifferenceY = EndCoordinates.Y - StartCoordinates.Y;
+                        DifferenceY = Math.Abs(DifferenceY);
+
+                        if (StartCoordinates.D == Direction.N)
+                        {
+                            instructions += $"Move {DifferenceY} steps forward.";
+                        }
+                        else
+                        {
+                            instructions += "Turn North.";
+                            instructions += $"Move {DifferenceY} steps forward.";
+                            StartCoordinates.D = Direction.N;
+                        }
+                    }
+                }
+
+                if (StartCoordinates.D != EndCoordinates.D)
+                {
+                    switch (EndCoordinates.D)
+                    {
+                        case Direction.N:
+                            instructions += "Turn North.";
+                            break;
+                        case Direction.E:
+                            instructions += "Turn East.";
+                            break;
+                        case Direction.S:
+                            instructions += "Turn South.";
+                            break;
+                        case Direction.W:
+                            instructions += "Turn West.";
+                            break;
+                    }
+                }
             }
+
+            
         }
     }
 
