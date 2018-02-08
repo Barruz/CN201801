@@ -17,15 +17,6 @@
           "lib/netstandard1.3/FluentAssertions.dll": {}
         }
       },
-      "GeorgeCloney/1.1.2.20": {
-        "type": "package",
-        "compile": {
-          "lib/net40/GeorgeCloney.dll": {}
-        },
-        "runtime": {
-          "lib/net40/GeorgeCloney.dll": {}
-        }
-      },
       "Microsoft.CodeCoverage/1.0.3": {
         "type": "package",
         "compile": {
@@ -1821,16 +1812,6 @@
         "lib/wpa81/FluentAssertions.pdb",
         "lib/wpa81/FluentAssertions.pri",
         "lib/wpa81/FluentAssertions.xml"
-      ]
-    },
-    "GeorgeCloney/1.1.2.20": {
-      "sha512": "j67dVEPpcNSxLImpOSGqlg+d89HjIA/mhH/mtDhv3fLeMLeE7GyBkzeyaPj1Sdplxw4X/JvHjO6nQwSm2OznlA==",
-      "type": "package",
-      "path": "georgecloney/1.1.2.20",
-      "files": [
-        "georgecloney.1.1.2.20.nupkg.sha512",
-        "georgecloney.nuspec",
-        "lib/net40/GeorgeCloney.dll"
       ]
     },
     "Microsoft.CodeCoverage/1.0.3": {
@@ -5871,7 +5852,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "FluentAssertions >= 4.19.4",
-      "GeorgeCloney >= 1.1.2.20",
       "Microsoft.NET.Test.Sdk >= 15.5.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "RoverBR2 >= 1.0.0",
@@ -5935,10 +5915,6 @@
             "target": "Package",
             "version": "[4.19.4, )"
           },
-          "GeorgeCloney": {
-            "target": "Package",
-            "version": "[1.1.2.20, )"
-          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[15.5.0, )"
@@ -5964,17 +5940,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GeorgeCloney 1.1.2.20' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GeorgeCloney",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }

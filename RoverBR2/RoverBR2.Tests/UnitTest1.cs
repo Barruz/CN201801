@@ -1,25 +1,44 @@
 using FluentAssertions;
 using Xunit;
-using GeorgeCloney;
 
 namespace RoverBR2.Tests
 {
     public class RoverTests
     {
-        // Initial Placement: Given starting coordinates 0,0,N, rover starts at 0,0,N
+        // Initial Placement: Given starting coordinates 1,1,S, rover's start coordinates become 1,1,S 
+        // (not using 00N, because it's the default value for all Coordinates variables)
 
         [Fact]
-        public void GivenStartingCoordinates00NRoverStartsAt00N()
+        public void Given_Starting_Coordinates_11S_Rovers_Start_Coordinates_Become_11S()
         {
             // -- arrange
+            var rover = new Rover();
 
             // -- act
+            rover.GivenCoordinates = new GivenCoordinates { X = 1, Y = 1, D = Direction.S };
+            rover.GetStartingCoordinates();
 
             // -- assert
-            
+            rover.StartCoordinates.ShouldBeEquivalentTo(new StartCoordinates { X = 1, Y = 1, D = Direction.S}, "because given starting coordinates 11S, starting coordinates should be 11S");
+
         }
 
-        // Initial Placement: Given starting coordinates 0,0,N, rover starts at 0,0,N
+        // Initial Placement: Given end coordinates -1,-1,E, rover's end coordinates become -1,-1,E
+
+        [Fact]
+        public void Given_End_Coordinates_min1min1S_Rovers_End_Coordinates_Become_min1min1S()
+        {
+            // -- arrange
+            var rover = new Rover();
+
+            // -- act
+            rover.GivenCoordinates = new GivenCoordinates{ X = -1, Y = -1, D = Direction.E };
+            rover.GetEndCoordinates();
+
+            // -- assert
+            rover.EndCoordinates.ShouldBeEquivalentTo(new EndCoordinates {X = -1, Y = -1, D = Direction.E }, "because given end coordinates -1-1S, end coordinates should be -1-1S");
+
+        }
 
         // Initial Placement: If start coordinates equal end coordinates, returns empty message
 
