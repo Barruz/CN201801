@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="4.19.4" />
+    <PackageReference Include="GeorgeCloney" Version="1.1.2.20" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
@@ -14,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RoverBR2.ConsoleApp\RoverBR2.ConsoleApp.csproj" />
+    <ProjectReference Include="..\RoverBR2.ConsoleApp1\RoverBR2.ConsoleApp1.csproj" />
     <ProjectReference Include="..\RoverBR2\RoverBR2.csproj" />
   </ItemGroup>
 
