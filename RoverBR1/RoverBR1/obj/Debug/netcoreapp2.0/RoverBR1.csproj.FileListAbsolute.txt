@@ -16,3 +16,12 @@ C:\Users\Bara\source\repos\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.pd
 \\vmware-host\Shared Folders\Downloads\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.AssemblyInfo.cs
 \\vmware-host\Shared Folders\Downloads\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.dll
 \\vmware-host\Shared Folders\Downloads\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.pdb
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\bin\Debug\netcoreapp2.0\RoverBR1.deps.json
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\bin\Debug\netcoreapp2.0\RoverBR1.dll
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\bin\Debug\netcoreapp2.0\RoverBR1.pdb
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.AssemblyInfoInputs.cache
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.AssemblyInfo.cs
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.dll
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1\obj\Debug\netcoreapp2.0\RoverBR1.pdb

@@ -689,11 +689,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj",
+      "projectUniqueName": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj",
       "projectName": "RoverBR1.ConsoleApp",
-      "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj",
+      "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\Bara\\.nuget\\packages\\",
-      "outputPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\obj\\",
+      "outputPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -712,8 +712,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj": {
-              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj"
+            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj": {
+              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj"
             }
           }
         }

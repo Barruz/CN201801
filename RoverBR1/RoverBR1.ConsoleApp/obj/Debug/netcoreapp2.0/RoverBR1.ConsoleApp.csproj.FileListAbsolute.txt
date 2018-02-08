@@ -24,3 +24,16 @@ C:\Users\Bara\source\repos\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\
 \\vmware-host\Shared Folders\Downloads\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.AssemblyInfo.cs
 \\vmware-host\Shared Folders\Downloads\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.dll
 \\vmware-host\Shared Folders\Downloads\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.pdb
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.deps.json
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.runtimeconfig.json
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.runtimeconfig.dev.json
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.dll
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.pdb
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.dll
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\bin\Debug\netcoreapp2.0\RoverBR1.pdb
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.AssemblyInfoInputs.cache
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.AssemblyInfo.cs
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.dll
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR1\RoverBR1.ConsoleApp\obj\Debug\netcoreapp2.0\RoverBR1.ConsoleApp.pdb

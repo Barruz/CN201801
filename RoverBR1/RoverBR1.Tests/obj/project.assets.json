@@ -5890,11 +5890,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.Tests\\RoverBR1.Tests.csproj",
+      "projectUniqueName": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.Tests\\RoverBR1.Tests.csproj",
       "projectName": "RoverBR1.Tests",
-      "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.Tests\\RoverBR1.Tests.csproj",
+      "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.Tests\\RoverBR1.Tests.csproj",
       "packagesPath": "C:\\Users\\Bara\\.nuget\\packages\\",
-      "outputPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.Tests\\obj\\",
+      "outputPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5913,11 +5913,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj": {
-              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj"
+            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj": {
+              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1.ConsoleApp\\RoverBR1.ConsoleApp.csproj"
             },
-            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj": {
-              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj"
+            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj": {
+              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj"
             }
           }
         }

@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj",
+      "projectUniqueName": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj",
       "projectName": "RoverBR1",
-      "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj",
+      "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1\\RoverBR1.csproj",
       "packagesPath": "C:\\Users\\Bara\\.nuget\\packages\\",
-      "outputPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\RoverBR1\\RoverBR1\\obj\\",
+      "outputPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR1\\RoverBR1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
