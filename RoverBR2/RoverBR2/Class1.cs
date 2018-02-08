@@ -39,6 +39,7 @@ namespace RoverBR2
         public GivenCoordinates GivenCoordinates { get; set; } = new GivenCoordinates();
         public StartCoordinates StartCoordinates { get; set; } = new StartCoordinates();
         public EndCoordinates EndCoordinates { get; set; } = new EndCoordinates();
+        public string instructions { get; set; }
 
         public void GetStartingCoordinates()
         {
@@ -52,6 +53,19 @@ namespace RoverBR2
             EndCoordinates.X = GivenCoordinates.X;
             EndCoordinates.Y = GivenCoordinates.Y;
             EndCoordinates.D = GivenCoordinates.D;
+        }
+        
+        public void StartCoordinatesEqualEndCoordinates()
+        {
+
+            if ((StartCoordinates.X == EndCoordinates.X) && (StartCoordinates.Y == EndCoordinates.Y) && (StartCoordinates.D == EndCoordinates.D))
+            {
+                instructions = "";
+            }
+            else
+            {
+                instructions = "instructions";
+            }
         }
     }
 
