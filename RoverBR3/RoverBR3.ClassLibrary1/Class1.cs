@@ -10,7 +10,7 @@ namespace RoverBR3
         S = 2,
         W = 3
     }
-
+    
     public class GivenCoordinates
     {
         // Variables entered by user, before being assigned to start/end coordinates
@@ -41,8 +41,7 @@ namespace RoverBR3
         public StartCoordinates StartCoordinates { get; set; } = new StartCoordinates();
         public EndCoordinates EndCoordinates { get; set; } = new EndCoordinates();
         public string Instructions { get; set; }
-        public string FormattingInstructions { get; set; }
-        public string Input { get; set; }
+        public string TestInput { get; set; }
 
         public void GetStartingCoordinates()
         {
@@ -58,8 +57,37 @@ namespace RoverBR3
             EndCoordinates.D = GivenCoordinates.D;
         }
 
+        public void GetCoordinates()
+        {
+            TestInput = TestInput.ToUpper();
+            string[] GetCoordinates = TestInput.Split(',');
+            GivenCoordinates.X = Int32.Parse(GetCoordinates[0]);
+            GivenCoordinates.Y = Int32.Parse(GetCoordinates[1]);
 
-        public void GetInstructions()
+            switch (GetCoordinates[2])
+            {
+                case "N":
+                    GivenCoordinates.D = Direction.N;
+                    break;
+                case "S":
+                    GivenCoordinates.D = Direction.S;
+                    break;
+                case "E":
+                    GivenCoordinates.D = Direction.E;
+                    break;
+                case "W":
+                    GivenCoordinates.D = Direction.W;
+                    break;
+                default:
+                    Console.WriteLine(value: "Pick one of the following directions: N, S, E, W.");
+                    Console.Write("> ");
+                    GetCoordinates[2] = Console.ReadLine();
+                    break;
+            }
+        }
+
+
+            public void GetInstructions()
         {
 
             if ((StartCoordinates.X == EndCoordinates.X) && (StartCoordinates.Y == EndCoordinates.Y) && (StartCoordinates.D == EndCoordinates.D))
@@ -76,17 +104,31 @@ namespace RoverBR3
                         int DifferenceX = StartCoordinates.X - EndCoordinates.X;
                         DifferenceX = Math.Abs(DifferenceX);
 
-                        if (StartCoordinates.D == Direction.W)
+                        if (StartCoordinates.D != Direction.W)
                         {
-                            int d = 1;
-                            do
+                            switch (StartCoordinates.D)
                             {
-                                Instructions += "M";
-                                d++;
+                                case Direction.N:
+                                    Instructions += "L";
+                                    break;
+                                case Direction.S:
+                                    Instructions += "R";
+                                    break;
+                                case Direction.E:
+                                    Instructions += "LL";
+                                    break;
                             }
-                            while (d <= DifferenceX);
+                            StartCoordinates.D = Direction.W;
                         }
 
+                        int d = 1;
+                        do
+                        {
+                            Instructions += "M";
+                            d++;
+                        }
+                        while (d <= DifferenceX);
+                        
                     }
 
                     if (StartCoordinates.X < EndCoordinates.X)
@@ -94,20 +136,105 @@ namespace RoverBR3
                         int DifferenceX = EndCoordinates.X - StartCoordinates.X;
                         DifferenceX = Math.Abs(DifferenceX);
 
-                        if (StartCoordinates.D == Direction.E)
+                        if (StartCoordinates.D != Direction.E)
                         {
-                            int d = 1;
-                            do
+                            switch (StartCoordinates.D)
                             {
-                                Instructions += "M";
-                                d++;
+                                case Direction.N:
+                                    Instructions += "R";
+                                    break;
+                                case Direction.S:
+                                    Instructions += "L";
+                                    break;
+                                case Direction.W:
+                                    Instructions += "LL";
+                                    break;
                             }
-                            while (d <= DifferenceX);
+                            StartCoordinates.D = Direction.E;
                         }
+                        
+                        int d = 1;
+                        do
+                        {
+                            Instructions += "M";
+                            d++;
+                        }
+                        while (d <= DifferenceX);
 
                     }
 
                 }
+
+
+                if (StartCoordinates.Y != EndCoordinates.Y)
+                {
+                    if (StartCoordinates.Y > EndCoordinates.Y)
+                    {
+                        int DifferenceY = StartCoordinates.Y - EndCoordinates.Y;
+                        DifferenceY = Math.Abs(DifferenceY);
+
+                        if (StartCoordinates.D != Direction.S)
+                        {
+                            switch (StartCoordinates.D)
+                            {
+                                case Direction.N:
+                                    Instructions += "LL";
+                                    break;
+                                case Direction.W:
+                                    Instructions += "L";
+                                    break;
+                                case Direction.E:
+                                    Instructions += "L";
+                                    break;
+                            }
+                            StartCoordinates.D = Direction.S;
+                        }
+
+                        int d = 1;
+                        do
+                        {
+                            Instructions += "M";
+                            d++;
+                        }
+                        while (d <= DifferenceY);
+
+                    }
+
+                    if (StartCoordinates.Y < EndCoordinates.Y)
+                    {
+                        int DifferenceY = EndCoordinates.Y - StartCoordinates.Y;
+                        DifferenceY = Math.Abs(DifferenceY);
+
+                        if (StartCoordinates.D != Direction.N)
+                        {
+                            switch (StartCoordinates.D)
+                            {
+                                case Direction.E:
+                                    Instructions += "L";
+                                    break;
+                                case Direction.S:
+                                    Instructions += "LL";
+                                    break;
+                                case Direction.W:
+                                    Instructions += "R";
+                                    break;
+                            }
+                            StartCoordinates.D = Direction.N;
+                        }
+
+                        int d = 1;
+                        do
+                        {
+                            Instructions += "M";
+                            d++;
+                        }
+                        while (d <= DifferenceY);
+
+                    }
+
+                }
+
+
 
                 if (StartCoordinates.D != EndCoordinates.D)
                 {
@@ -115,7 +242,7 @@ namespace RoverBR3
                     {
                         if (EndCoordinates.D == Direction.E)
                         {
-                            Instructions += "L";
+                            Instructions += "R";
                         }
                         else if (EndCoordinates.D == Direction.S)
                         {
@@ -123,13 +250,59 @@ namespace RoverBR3
                         }
                         else if (EndCoordinates.D == Direction.W)
                         {
+                            Instructions += "L";
+                        }
+                    }
+
+                    if (StartCoordinates.D == Direction.E)
+                    {
+                        if (EndCoordinates.D == Direction.N)
+                        {
+                            Instructions += "L";
+                        }
+                        else if (EndCoordinates.D == Direction.S)
+                        {
                             Instructions += "R";
                         }
-
-                        else
+                        else if (EndCoordinates.D == Direction.W)
                         {
-                            Instructions += "";
+                            Instructions += "LL";
                         }
+                        
+                    }
+
+                    if (StartCoordinates.D == Direction.S)
+                    {
+                        if (EndCoordinates.D == Direction.E)
+                        {
+                            Instructions += "L";
+                        }
+                        else if (EndCoordinates.D == Direction.N)
+                        {
+                            Instructions += "LL";
+                        }
+                        else if (EndCoordinates.D == Direction.W)
+                        {
+                            Instructions += "R";
+                        }
+                        
+                    }
+
+                    if (StartCoordinates.D == Direction.W)
+                    {
+                        if (EndCoordinates.D == Direction.E)
+                        {
+                            Instructions += "LL";
+                        }
+                        else if (EndCoordinates.D == Direction.S)
+                        {
+                            Instructions += "L";
+                        }
+                        else if (EndCoordinates.D == Direction.N)
+                        {
+                            Instructions += "R";
+                        }
+                        
                     }
                 }
 
