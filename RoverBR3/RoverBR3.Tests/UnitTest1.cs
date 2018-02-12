@@ -7,7 +7,7 @@ namespace RoverBR3.Tests
     public class UnitTest1
     {
 
-// Initial Placement
+// No instructions from navigator
 
         // Given coordinates 00N and 00N, instructions will be empty (works for all identical coordinates)
         [Fact]
@@ -22,10 +22,26 @@ namespace RoverBR3.Tests
             navigator.GetInstructions();
 
             // -- assert
-            navigator.Instructions.Should().Be("", "because the start and end coordinates are the same.");
+            navigator.Instructions.Should().Be("", "because the start and end coordinates are the same");
         }
 
-// Movement
+        // Given coordinates 10-80E and 10-80E, instructions will be empty (check if works for other identical coordinates than 00N)
+        [Fact]
+        public void Coordinates_10min80E_10min80E_Return_Empty_Instructions()
+        {
+            // -- arrange
+            var navigator = new Navigator();
+            navigator.Start = new Start { X = 10, Y = -80, D = Direction.E };
+            navigator.End = new End { X = 10, Y = -80, D = Direction.E };
+
+            // -- act
+            navigator.GetInstructions();
+
+            // -- assert
+            navigator.Instructions.Should().Be("", "because the start and end coordinates are the same");
+        }
+
+// Movement instructions from navigator
 
         // Turn on spot: Given coordinates 00N and 00E, instructions will be "R"
         [Fact]
@@ -58,7 +74,7 @@ namespace RoverBR3.Tests
             // -- assert
             navigator.Instructions.Should().Be("M", "because the rover doesn't turn and moves 1 time");
         }
-        
+
         // Move more steps without turning, X axis: Given coordinates 00E and 40E, instructions will be "MMMM"
         [Fact]
         public void Coordinates_00E_min40E_Return_MMMM()
@@ -72,7 +88,7 @@ namespace RoverBR3.Tests
             navigator.GetInstructions();
 
             // -- assert
-            navigator.Instructions.Should().Be("MMMM", "because the rover moves 4 times");
+            navigator.Instructions.Should().Be("MMMM", "because the rover doesn't turn and moves 4 times");
         }
 
         // Turn - move East, X axis: Given coordinates 00N and 20E, instructions will be "RMM"
@@ -136,7 +152,7 @@ namespace RoverBR3.Tests
             navigator.GetInstructions();
 
             // -- assert
-            navigator.Instructions.Should().Be("M", "because the roves moves once");
+            navigator.Instructions.Should().Be("M", "because the rover doesn't turn and moves once");
         }
 
         // Turn - Move east - turn - move south - turn, X+Y axis: Given coordinates 2-1N and 0-3W, instructions will be "LMMLMMR"
@@ -155,7 +171,7 @@ namespace RoverBR3.Tests
             navigator.Instructions.Should().Be("LMMLMMR");
         }
 
-// Parsing
+ // Parsing
 
         // If entered coordinates (string) are 11N, object X coordinate will be int 1
         [Fact]
@@ -164,13 +180,12 @@ namespace RoverBR3.Tests
             // -- arrange
             var navigator = new Navigator();
             var coordinates = "1,1,N";
-            var coordinates2 = "0,0,N";
 
             // -- act
-            navigator.GetCoordinates(coordinates, coordinates2);
+            navigator.GetStartCoordinates(coordinates);
 
             // -- assert
-            navigator.Start.X.ShouldBeEquivalentTo(1);
+            navigator.Start.X.ShouldBeEquivalentTo(1, "because X1 should parse into an integer");
         }
 
         // If entered coordinates (string) are 11N, object X,Y coordinates will be int 1, int 1
@@ -180,15 +195,13 @@ namespace RoverBR3.Tests
             // -- arrange
             var navigator = new Navigator();
             var coordinates = "1,1,N";
-            var coordinates2 = "0,0,N";
-
 
             // -- act
-            navigator.GetCoordinates(coordinates, coordinates2);
+            navigator.GetStartCoordinates(coordinates);
 
             // -- assert
-            navigator.Start.X.ShouldBeEquivalentTo(1);
-            navigator.Start.Y.ShouldBeEquivalentTo(1);
+            navigator.Start.X.ShouldBeEquivalentTo(1, "because X1 should parse into an integer");
+            navigator.Start.Y.ShouldBeEquivalentTo(1, "because Y1 should parse into an integer");
         }
 
         // If entered coordinates (string) are 11S, object will be int 1, int 1, Direction.S
@@ -198,33 +211,15 @@ namespace RoverBR3.Tests
             // -- arrange
             var navigator = new Navigator();
             var coordinates = "1,1,S";
-            var coordinates2 = "0,0,N";
 
             // -- act
-            navigator.GetCoordinates(coordinates, coordinates2);
+            navigator.GetStartCoordinates(coordinates);
 
             // -- assert
             navigator.Start.ShouldBeEquivalentTo(new Start { X = 1, Y = 1, D = Direction.S });
         }
 
-        // If entered coordinates (string) are 11E, starting coords will be int 0, int 0, Direction.E
-        [Fact]
-        public void If_Coordinates_11E_Start_Is_Int1Int1DirectionE()
-        {
-            // -- arrange
-            var navigator = new Navigator();
-            var coordinates = "1,1,E";
-            var coordinates2 = "2,2,W";
-
-            // -- act
-            navigator.GetCoordinates(coordinates, coordinates2);
-
-            // -- assert
-            navigator.Start.ShouldBeEquivalentTo(new Position { X = 1, Y = 1, D = Direction.E });
-            navigator.End.ShouldBeEquivalentTo(new Position { X = 2, Y = 2, D = Direction.W });
-        }
-
-        // Theories
+// Theory (example coordinates from homework instructions)
 
         [Theory]
         [InlineData("0,0,N", "-2,3,E", "LMMRMMMR")]
@@ -236,12 +231,12 @@ namespace RoverBR3.Tests
             var navigator = new Navigator();
 
             // -- act
-            navigator.GetCoordinates(coordinates, coordinates2);
+            navigator.GetStartCoordinates(coordinates);
+            coordinates = coordinates2;
+            navigator.GetInstructions(coordinates);
 
             // -- assert
             navigator.Instructions.ShouldBeEquivalentTo(expected_instructions);
         }
-
-
     }
 }

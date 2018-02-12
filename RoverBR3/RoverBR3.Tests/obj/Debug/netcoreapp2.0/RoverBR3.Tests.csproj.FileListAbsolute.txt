@@ -10,9 +10,7 @@
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\obj\Debug\netcoreapp2.0\RoverBR3.Tests.AssemblyInfoInputs.cache
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\obj\Debug\netcoreapp2.0\RoverBR3.Tests.AssemblyInfo.cs
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\bin\Debug\netcoreapp2.0\RoverBR3.Tests.pdb
-\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\bin\Debug\netcoreapp2.0\RoverBR3.ConsoleApp1.dll
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\bin\Debug\netcoreapp2.0\RoverBR3.dll
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\bin\Debug\netcoreapp2.0\RoverBR3.pdb
-\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\bin\Debug\netcoreapp2.0\RoverBR3.ConsoleApp1.pdb
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\obj\Debug\netcoreapp2.0\RoverBR3.Tests.dll
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.Tests\obj\Debug\netcoreapp2.0\RoverBR3.Tests.pdb

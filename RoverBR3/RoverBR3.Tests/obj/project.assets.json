@@ -1700,19 +1700,6 @@
         "runtime": {
           "bin/placeholder/RoverBR3.dll": {}
         }
-      },
-      "RoverBR3.ConsoleApp1/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "Microsoft.NETCore.App": "2.0.0"
-        },
-        "compile": {
-          "bin/placeholder/RoverBR3.ConsoleApp1.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RoverBR3.ConsoleApp1.dll": {}
-        }
       }
     }
   },
@@ -5841,11 +5828,6 @@
       "type": "project",
       "path": "../RoverBR3.ClassLibrary1/RoverBR3.csproj",
       "msbuildProject": "../RoverBR3.ClassLibrary1/RoverBR3.csproj"
-    },
-    "RoverBR3.ConsoleApp1/1.0.0": {
-      "type": "project",
-      "path": "../RoverBR3.ConsoleApp1/RoverBR3.ConsoleApp1.csproj",
-      "msbuildProject": "../RoverBR3.ConsoleApp1/RoverBR3.ConsoleApp1.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5854,7 +5836,6 @@
       "Microsoft.NET.Test.Sdk >= 15.5.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "RoverBR3 >= 1.0.0",
-      "RoverBR3.ConsoleApp1 >= 1.0.0",
       "xunit >= 2.3.1",
       "xunit.runner.visualstudio >= 2.3.1"
     ]
@@ -5892,9 +5873,6 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR3\\RoverBR3.ConsoleApp1\\RoverBR3.ConsoleApp1.csproj": {
-              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR3\\RoverBR3.ConsoleApp1\\RoverBR3.ConsoleApp1.csproj"
-            },
             "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR3\\RoverBR3.ClassLibrary1\\RoverBR3.csproj": {
               "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR3\\RoverBR3.ClassLibrary1\\RoverBR3.csproj"
             }

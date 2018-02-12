@@ -11,7 +11,6 @@
           "FluentAssertions": "4.19.4",
           "Microsoft.NET.Test.Sdk": "15.5.0",
           "RoverBR3": "1.0.0",
-          "RoverBR3.ConsoleApp1": "1.0.0",
           "xunit": "2.3.1",
           "xunit.runner.visualstudio": "2.3.1"
         },
@@ -1048,11 +1047,6 @@
         "runtime": {
           "RoverBR3.dll": {}
         }
-      },
-      "RoverBR3.ConsoleApp1/1.0.0": {
-        "runtime": {
-          "RoverBR3.ConsoleApp1.dll": {}
-        }
       }
     }
   },
@@ -1609,11 +1603,6 @@
       "hashPath": "xunit.runner.visualstudio.2.3.1.nupkg.sha512"
     },
     "RoverBR3/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "RoverBR3.ConsoleApp1/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

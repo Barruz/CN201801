@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RoverBR3.ClassLibrary1\RoverBR3.csproj" />
-    <ProjectReference Include="..\RoverBR3.ConsoleApp1\RoverBR3.ConsoleApp1.csproj" />
   </ItemGroup>
 
 </Project>

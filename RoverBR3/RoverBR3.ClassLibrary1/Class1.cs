@@ -10,22 +10,22 @@ namespace RoverBR3
         S = 2,
         W = 3
     }
-
-    public class Position
+    
+    public class Start // Stores starting coordinates
     {
         public int X { get; set; }
         public int Y { get; set; }
         public Direction D { get; set; }
     }
 
-    public class Start
+    public class End // Stores end coordinates
     {
         public int X { get; set; }
         public int Y { get; set; }
         public Direction D { get; set; }
     }
-
-    public class End
+    
+    public class Position // Passes current rover position between different methods
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -34,268 +34,200 @@ namespace RoverBR3
 
     public class Navigator
     {
-        public Position Position { get; set; } = new Position();
         public Start Start { get; set; } = new Start();
         public End End { get; set; } = new End();
-        public string Instructions { get; set; }
+        public Position Position { get; set; } = new Position();
+        public Position Init { get; set; } = new Position();
+        public string Instructions { get; set; } // Instructions output
         
-        public void GetCoordinates(string coordinates, string coordinates2)
+        public void GetStartCoordinates(string coordinates) // Store starting coordinates in 'start' variables
+        {
+            Instructions = ""; // Wipe clear in case program is repeated in the same session.
+            Parse(coordinates);
+            Start = new Start { X = Position.X, Y = Position.Y, D = Position.D };
+        }
+
+        public void GetInstructions(string coordinates)
         {
             Parse(coordinates);
-                Start.X = Position.X;
-                Start.Y = Position.Y;
-                Start.D = Position.D;
-            coordinates = coordinates2;
-            Parse(coordinates);
-                End.X = Position.X;
-                End.Y = Position.Y;
-                End.D = Position.D;
+            End = new End { X = Position.X, Y = Position.Y, D = Position.D }; // Store end coordinates in 'end' variables
             GetInstructions();
         }
 
         public void Parse(string coordinates)
         {
-            coordinates = coordinates.ToUpper();
-            string[] GetPosition = coordinates.Split(',');
-            Position.X = Int32.Parse(GetPosition[0]);
-            Position.Y = Int32.Parse(GetPosition[1]);
-
-            switch (GetPosition[2])
+            string[] GetPosition = coordinates.Split(','); // Split string, accept only three values
+            while (true)
             {
-                case "N":
-                    Position.D = Direction.N;
-                    break;
-                case "S":
-                    Position.D = Direction.S;
-                    break;
-                case "E":
-                    Position.D = Direction.E;
-                    break;
-                case "W":
-                    Position.D = Direction.W;
-                    break;
-                default:
-                    Console.WriteLine(value: "Pick one of the following directions: N, S, E, W.");
-                    Console.Write("> ");
-                    GetPosition[2] = Console.ReadLine();
+                if (GetPosition.Count() != 3)
+                {
+                    Console.WriteLine(value: "Incorrect format, please try again.");
+                    Console.Write(value: "> ");
+                    GetPosition = Console.ReadLine().Split(',');
+                }
+                else
                     break;
             }
+
+            while(true) // Get X coordinate
+            {
+                try
+                {
+                    Position.X = Int32.Parse(GetPosition[0]);
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine(value: "Please enter the X coordinate again. Use an integer larger than -2147483648 and smaller than 2147483647.");
+                    Console.Write(value: "> ");
+                    GetPosition[0] = Console.ReadLine();
+                }
+            }
+
+            while(true) // Get Y coordinate
+            {
+                try
+                {
+                    Position.Y = Int32.Parse(GetPosition[1]);
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine(value: "Please enter the Y coordinate again. Use an integer larger than -2147483648 and smaller than 2147483647.");
+                    Console.Write(value: "> ");
+                    GetPosition[1] = Console.ReadLine();
+                }
+            }
+
+            do // Get direction
+            {
+                GetPosition[2] = GetPosition[2].ToUpper();
+                switch (GetPosition[2])
+                {
+                    case "N":
+                        Position.D = Direction.N;
+                        break;
+                    case "S":
+                        Position.D = Direction.S;
+                        break;
+                    case "E":
+                        Position.D = Direction.E;
+                        break;
+                    case "W":
+                        Position.D = Direction.W;
+                        break;
+                    case "":
+                    default:
+                        Console.WriteLine(value: "Pick one of the following directions: N, S, E, W.");
+                        Console.Write("> ");
+                        GetPosition[2] = Console.ReadLine();
+                        break;
+                }
+            }
+            while ((GetPosition[2] != "N") && (GetPosition[2] != "E") && (GetPosition[2] != "S") && (GetPosition[2] != "W"));
         }
 
-        public void GetInstructions()
+        public void GetInstructions() // Builds string of instructions
         {
-            if ((Start.X == End.X) && (Start.Y == End.Y) && (Start.D == End.D))
+            Position.D = Start.D;
+
+            if ((Start.X == End.X) && (Start.Y == End.Y) && (Position.D == End.D)) // If identical end & start coordinates, return empty instructions
             {
                 Instructions = "";
             }
 
-            else
+            else // if S&E coordinates are not identical
             {
-                if (Start.X != End.X)
+                if (Start.X != End.X) // move on X axis
                 {
                     if (Start.X > End.X)
                     {
-                        int DifferenceX = Start.X - End.X;
-                        DifferenceX = Math.Abs(DifferenceX);
-
-                        if (Start.D != Direction.W)
+                        if (Position.D != Direction.W)
                         {
-                            switch (Start.D)
-                            {
-                                case Direction.N:
-                                    Instructions += "L";
-                                    break;
-                                case Direction.S:
-                                    Instructions += "R";
-                                    break;
-                                case Direction.E:
-                                    Instructions += "LL";
-                                    break;
-                            }
-                            Start.D = Direction.W;
+                            Init.D = Direction.W;
+                            Turn();
+                            Position.D = Direction.W;
                         }
-
-                        int d = 1;
-                        do
-                        {
-                            Instructions += "M";
-                            d++;
-                        }
-                        while (d <= DifferenceX);
-
+                        int difference = Math.Abs(Start.X - End.X);
+                        Move(difference);
                     }
 
                     else
                     {
-                        int DifferenceX = End.X - Start.X;
-                        DifferenceX = Math.Abs(DifferenceX);
-
-                        if (Start.D != Direction.E)
+                        if (Position.D != Direction.E)
                         {
-                            switch (Start.D)
-                            {
-                                case Direction.N:
-                                    Instructions += "R";
-                                    break;
-                                case Direction.S:
-                                    Instructions += "L";
-                                    break;
-                                case Direction.W:
-                                    Instructions += "LL";
-                                    break;
-                            }
-                            Start.D = Direction.E;
+                            Init.D = Direction.E;
+                            Turn();
+                            Position.D = Direction.E;
                         }
-
-                        int d = 1;
-                        do
-                        {
-                            Instructions += "M";
-                            d++;
-                        }
-                        while (d <= DifferenceX);
+                        int difference = Math.Abs(End.X - Start.X);
+                        Move(difference);
                     }
                 }
 
 
-                if (Start.Y != End.Y)
+                if (Start.Y != End.Y) // move on Y axis
                 {
                     if (Start.Y > End.Y)
                     {
-                        int DifferenceY = Start.Y - End.Y;
-                        DifferenceY = Math.Abs(DifferenceY);
-
-                        if (Start.D != Direction.S)
+                        if (Position.D != Direction.S)
                         {
-                            switch (Start.D)
-                            {
-                                case Direction.N:
-                                    Instructions += "LL";
-                                    break;
-                                case Direction.W:
-                                    Instructions += "L";
-                                    break;
-                                case Direction.E:
-                                    Instructions += "L";
-                                    break;
-                            }
-                            Start.D = Direction.S;
+                            Init.D = Direction.S;
+                            Turn();
+                            Position.D = Direction.S;
                         }
-
-                        int d = 1;
-                        do
-                        {
-                            Instructions += "M";
-                            d++;
-                        }
-                        while (d <= DifferenceY);
-
+                        int difference = Math.Abs(Start.Y - End.Y);
+                        Move(difference);
                     }
 
                     else
                     {
-                        int DifferenceY = End.Y - Start.Y;
-                        DifferenceY = Math.Abs(DifferenceY);
-
-                        if (Start.D != Direction.N)
+                        if (Position.D != Direction.N)
                         {
-                            switch (Start.D)
-                            {
-                                case Direction.E:
-                                    Instructions += "L";
-                                    break;
-                                case Direction.S:
-                                    Instructions += "LL";
-                                    break;
-                                case Direction.W:
-                                    Instructions += "R";
-                                    break;
-                            }
-                            Start.D = Direction.N;
+                            Init.D = Direction.N;
+                            Turn();
+                            Position.D = Direction.N;
                         }
-
-                        int d = 1;
-                        do
-                        {
-                            Instructions += "M";
-                            d++;
-                        }
-                        while (d <= DifferenceY);
+                        int difference = Math.Abs(End.Y - Start.Y);
+                        Move(difference);
                     }
                 }
-                
-                if (Start.D != End.D)
+
+                if (Position.D != End.D) // Final turn to face end direction
                 {
-                    if (Start.D == Direction.N)
-                    {
-                        if (End.D == Direction.E)
-                        {
-                            Instructions += "R";
-                        }
-                        else if (End.D == Direction.S)
-                        {
-                            Instructions += "LL";
-                        }
-                        else if (End.D == Direction.W)
-                        {
-                            Instructions += "L";
-                        }
-                    }
-
-                    if (Start.D == Direction.E)
-                    {
-                        if (End.D == Direction.N)
-                        {
-                            Instructions += "L";
-                        }
-                        else if (End.D == Direction.S)
-                        {
-                            Instructions += "R";
-                        }
-                        else if (End.D == Direction.W)
-                        {
-                            Instructions += "LL";
-                        }
-
-                    }
-
-                    if (Start.D == Direction.S)
-                    {
-                        if (End.D == Direction.E)
-                        {
-                            Instructions += "L";
-                        }
-                        else if (End.D == Direction.N)
-                        {
-                            Instructions += "LL";
-                        }
-                        else if (End.D == Direction.W)
-                        {
-                            Instructions += "R";
-                        }
-
-                    }
-
-                    if (Start.D == Direction.W)
-                    {
-                        if (End.D == Direction.E)
-                        {
-                            Instructions += "LL";
-                        }
-                        else if (End.D == Direction.S)
-                        {
-                            Instructions += "L";
-                        }
-                        else if (End.D == Direction.N)
-                        {
-                            Instructions += "R";
-                        }
-
-                    }
+                    Init.D = End.D;
+                    Turn();
                 }
             }
 
         }
+
+        public void Turn() // Turning method
+        {
+            if ((Position.D == Init.D - 1) || ((Position.D == Direction.W) && (Init.D == Direction.N)))
+            {
+                Instructions += "R";
+            }
+            else if ((Init.D == Position.D - 1) || ((Position.D == Direction.N) && (Init.D == Direction.W)))
+            {
+                Instructions += "L";
+            }
+            else
+            {
+                Instructions += "LL";
+            }
+        }
+
+        public void Move(int difference) // Moving method
+        {
+            int d = 1;
+            do
+            {
+                Instructions += "M";
+                d++;
+            }
+            while (d <= difference);
+        }
+        
     }
-    
 }

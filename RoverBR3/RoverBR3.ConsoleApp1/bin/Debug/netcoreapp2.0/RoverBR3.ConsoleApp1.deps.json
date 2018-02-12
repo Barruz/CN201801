@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "RoverBR3.ConsoleApp1/1.0.0": {
+        "dependencies": {
+          "RoverBR3": "1.0.0"
+        },
         "runtime": {
           "RoverBR3.ConsoleApp1.dll": {}
+        }
+      },
+      "RoverBR3/1.0.0": {
+        "runtime": {
+          "RoverBR3.dll": {}
         }
       }
     }
   },
   "libraries": {
     "RoverBR3.ConsoleApp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RoverBR3/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

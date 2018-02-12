@@ -9,3 +9,5 @@
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.ConsoleApp1\obj\Debug\netcoreapp2.0\RoverBR3.ConsoleApp1.dll
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.ConsoleApp1\obj\Debug\netcoreapp2.0\RoverBR3.ConsoleApp1.pdb
 \\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.ConsoleApp1\obj\Debug\netcoreapp2.0\RoverBR3.ConsoleApp1.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.ConsoleApp1\bin\Debug\netcoreapp2.0\RoverBR3.dll
+\\vmware-host\Shared Folders\Downloads\CN201801\CN201801\RoverBR3\RoverBR3.ConsoleApp1\bin\Debug\netcoreapp2.0\RoverBR3.pdb

@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RoverBR3.ClassLibrary1\RoverBR3.csproj" />
+  </ItemGroup>
+
 </Project>

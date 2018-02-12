@@ -196,6 +196,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "RoverBR3/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/RoverBR3.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RoverBR3.dll": {}
+        }
       }
     }
   },
@@ -656,11 +666,17 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "RoverBR3/1.0.0": {
+      "type": "project",
+      "path": "../RoverBR3.ClassLibrary1/RoverBR3.csproj",
+      "msbuildProject": "../RoverBR3.ClassLibrary1/RoverBR3.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "RoverBR3 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -695,7 +711,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR3\\RoverBR3.ClassLibrary1\\RoverBR3.csproj": {
+              "projectPath": "\\\\vmware-host\\Shared Folders\\Downloads\\CN201801\\CN201801\\RoverBR3\\RoverBR3.ClassLibrary1\\RoverBR3.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
